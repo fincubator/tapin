@@ -7,8 +7,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install uwsgi
 
 COPY . .
-RUN python manage.py install
+#RUN python manage.py install
 
 EXPOSE 9090
+
+ENTRYPOINT [ "./entrypoint.sh" ]
 
 CMD [ "uwsgi", "--ini", "wsgi.ini" ]

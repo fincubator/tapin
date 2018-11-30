@@ -41,7 +41,7 @@ app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
 
 # Setup Storage
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///../data/database.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -66,14 +66,15 @@ log_handler_mail.setFormatter(logging.Formatter(
     "\n" +
     "%(message)s\n"
 ))
-log_handler_mail.setLevel(logging.WARN)
+log_handler_mail.setLevel(logging.DEBUG)
 log_handler_stdout = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 log_handler_stdout.setFormatter(formatter)
-log_handler_rotate = RotatingFileHandler('faucet.log',
+log_handler_stdout.setLevel(logging.DEBUG)
+log_handler_rotate = RotatingFileHandler('data/faucet.log',
                                          maxBytes=1024 * 1024 * 100,
                                          backupCount=20)
-log_handler_rotate.setLevel(logging.CRITICAL)
+log_handler_rotate.setLevel(logging.DEBUG)
 app.logger.addHandler(log_handler_mail)
 app.logger.addHandler(log_handler_rotate)
 app.logger.addHandler(log_handler_stdout)

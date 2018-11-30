@@ -59,6 +59,8 @@ target/
 *.swp
 .env
 config.yml
+data
 
 # IDE
 .idea
+

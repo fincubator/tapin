@@ -41,6 +41,7 @@ def tapbasic(referrer):
         ip = request.headers.get('X-Real-IP')
     else:
         ip = request.remote_addr
+    log.info("Request from IP: " + ip)
     if ip != "127.0.0.1" and models.Accounts.exists(ip):
         return api_error("Only one account per IP")
 
