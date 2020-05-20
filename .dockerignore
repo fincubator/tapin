@@ -1,1 +1,10 @@
-config.yml
+/.git
+/config.yml
+/config-example.yml
+/docker-compose.yml
+/Dockerfile
+/LICENSE.txt
+/README.md
+/start.sh
+/.dockerignore
+/.gitignore

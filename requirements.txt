@@ -1,22 +1,24 @@
 # git repos
 -e git://github.com/xeroc/python-graphenelib@0.5.4#egg=graphenelib
 -e git://github.com/xeroc/python-bitshares@0.1.8#egg=bitshares
-autobahn
-pycrypto
-pyyaml
+autobahn == 20.4.3
+pycrypto == 2.6.1
+pyyaml == 5.3.1
 
 # flask
-flask
-Flask-SQLAlchemy
-Flask-Session
-flask-cors
-flask-script
-flask-mail
-flask-markdown
+flask == 1.1.2
+Flask-SQLAlchemy == 2.4.1
+Flask-Session == 0.3.2
+flask-cors == 3.0.8
+flask-script == 2.0.6
+flask-mail == 0.9.1
+flask-markdown == 0.3
 
 # hosting
-gunicorn
-configparser
+gunicorn == 20.0.4
+configparser == 5.0.0
 
 # misc
-requests>=2.9.1
+requests == 2.23.0
+
+uwsgi == 2.0.18
