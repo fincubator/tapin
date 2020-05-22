@@ -1,0 +1,11 @@
+version: '2'
+services:
+  faucet:
+    image: finteh/tapin
+    ports:
+      - 9090:9090
+    volumes:
+      - ./config.yml:/app/config.yml
+      - dbdata:/app/data
+volumes:
+  dbdata:
