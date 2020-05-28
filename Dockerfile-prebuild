@@ -1,0 +1,3 @@
+FROM finteh/tapin:latest
+
+COPY config.yml ./
